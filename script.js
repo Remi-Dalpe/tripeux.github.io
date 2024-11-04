@@ -1,7 +1,46 @@
 'use strict';
 
+///////////////////////////////////////
+// Modal windows
+
+const overlay = document.querySelector('.overlay');
+const modals = document.querySelectorAll('.modal');
+const btnCloseModals = document.querySelectorAll('.btn--close-modal');
+
+// Function to open modal
+const openModal = function (modalId) {
+  document.getElementById(modalId).classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+// Function to close all modals
+const closeModal = function () {
+  modals.forEach(modal => modal.classList.add('hidden'));
+  overlay.classList.add('hidden');
+};
+
+// Event delegation for opening modals
+document.addEventListener('click', function (e) {
+  const modalId = e.target.dataset.modal;
+  if (modalId) {
+    e.preventDefault();
+    openModal(modalId);
+  }
+});
+
+// Close modals on close button click or overlay click
+btnCloseModals.forEach(btn => btn.addEventListener('click', closeModal));
+overlay.addEventListener('click', closeModal);
+
+// Close modals on 'Escape' key press
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+    closeModal();
+  }
+});
+
 /////////////////////////////////////////////////
-// Slider
+// Sliders
 
 const slider = function () {
   const slides = document.querySelectorAll(`.slide`);
@@ -25,10 +64,9 @@ const slider = function () {
   };
 
   const goToSlide = function (slide) {
-    slides.forEach((s, i) => {
-      s.style.transform = `translateX(${100 * (i - slide)}%)`;
-    });
+    slides.forEach((s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`));
   };
+
   //  Next slide
   const nextSlide = function () {
     if (curSlide === maxSlide - 1) curSlide = 0;
@@ -80,38 +118,46 @@ slider();
 ////////////////////////////////////////////////
 // Lazy Loading Images
 
-// Selecting all images w/ date-src attribute
+// Selection of all images w/ date-src attribute
 const imgTargets = document.querySelectorAll(`img[data-src]`);
 
-// Loading images when it enters view port
+// Function to load image when it enters the viewport
 const loadImg = function (entries, observer) {
-  // Destructuring entries to get the first
   entries.forEach(entry => {
-    // Check if the image is visible
     if (!entry.isIntersecting) return;
 
-    // Replace the src w/ the data-src
+    // Replace src with data-src
     entry.target.src = entry.target.dataset.src;
 
-    // Removal of blur effect
+    // Remove blur effect after the image is loaded
     entry.target.addEventListener('load', function () {
       entry.target.classList.remove('lazy-img');
     });
 
-    // Stop observing the image as it's loaded already
+    // Stop observing the image as it's already loaded
     observer.unobserve(entry.target);
   });
 };
 
-// Creates observer w/ argument: callback function loadImg to be executed when images come into view
+// Creation of an IntersectionObserver instance
 const imgObserver = new IntersectionObserver(loadImg, {
-  // Viewport selected as root for intersection detection
   root: null,
-  // Trigger before image becomes visible
-  threshold: 0.1,
-  // Observer triggers loadImg when image is within 200px of viewport for early loading
-  rootMargin: '200px',
+  threshold: [0.1, 0.5, 1.0], // Array of thresholds for better responsiveness
+  rootMargin: '500px', // Load images earlier before they enter the viewport
 });
 
-// Iterates over all imgTargets & instruct the observer to observe them
+// Observe each image target
 imgTargets.forEach(img => imgObserver.observe(img));
+
+// Fallback for browsers without IntersectionObserver support
+if (!('IntersectionObserver' in window)) {
+  imgTargets.forEach(img => {
+    // Replace src with data-src
+    img.src = img.dataset.src;
+
+    // Remove blur effect after the image is loaded
+    img.addEventListener('load', function () {
+      img.classList.remove('lazy-img');
+    });
+  });
+}

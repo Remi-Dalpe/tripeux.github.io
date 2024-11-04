@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" type="image/png" href="assets/img/logo-tripeux.jpg" />
+    <link rel="icon" type="image/png" href="assets/img/logo-tripeux.jpg" alt="Logo" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <title>Les TRIpeux de l'est</title>
@@ -29,7 +29,7 @@
             <a class="nav__link" href="#section--3">Nous</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link--btn btn--show-modal" href="#">Sign-in / Sign-up</a>
+            <a class="nav__link nav__link--btn" href="#" data-modal="login">Se connecter / Créer un compte</a>
           </li>
         </ul>
       </nav>
@@ -41,7 +41,7 @@
           <span class="highlight-blue">Les TRIpeux de l'est</span>
         </h1>
         <h4>Entrainements tout les mercredis! 🏃🏊🚵</h4>
-        <button class="btn--text btn--scroll-to" href="#section--1">Découverte &DownArrow;</button>
+        <button class="btn--text btn--scroll-to" href="#section--1">Découverte&DownArrow;</button>
         <img
           loading="lazy"
           src="assets/img/cover-facebook-lazy.jpg"
@@ -52,41 +52,90 @@
       </div>
     </header>
 
+    <section class="section" id="section--2">
+      <div class="section__title section__title--entraineurs">
+        <h2 class="section__description">Entraineurs title description</h2>
+        <h3 class="section__header">Entraineurs title header</h3>
+      </div>
+
+      <div class="entraineurs">
+        <div class="entraineur">
+          <blockquote class="entraineur__text">
+            <span class="first-word">Danny</span> lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium
+            quas quisquam non? Quas voluptate nulla minima deleniti optio ullam nesciunt, numquam corporis et asperiores
+            laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus id alias reiciendis, perferendis facere
+            pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
+          </blockquote>
+          <address class="entraineur__author">
+            <img src="assets/img/danny-photo.jpg" alt="Photo Profil Danny" class="entraineur__photo" />
+            <h6 class="entraineur__name">Danny Rioux</h6>
+            <p class="entraineur__title">Fondateur</p>
+          </address>
+        </div>
+        <div class="entraineur">
+          <blockquote class="entraineur__text">
+            <span class="first-word">Simon</span> lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium
+            quas quisquam non? Quas voluptate nulla minima deleniti optio ullam nesciunt, numquam corporis et asperiores
+            laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus id alias reiciendis, perferendis facere
+            pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
+          </blockquote>
+          <address class="entraineur__author">
+            <img src="assets/img/simon-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
+            <h6 class="entraineur__name">Simon Dalpé</h6>
+            <p class="entraineur__title">Président</p>
+          </address>
+        </div>
+        <div class="entraineur">
+          <blockquote class="entraineur__text">
+            <span class="first-word">Genevieve</span> lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusantium quas quisquam non? Quas voluptate nulla minima deleniti optio ullam nesciunt, numquam corporis
+            et asperiores laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus id alias reiciendis,
+            perferendis facere pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
+          </blockquote>
+          <address class="entraineur__author">
+            <img src="assets/img/genevieve-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
+            <h6 class="entraineur__name">Genevieve Poitras</h6>
+            <p class="entraineur__title">Entraineur</p>
+          </address>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="section--3">
       <div class="section__title">
-        <h2 class="section__description">Viné!</h2>
-        <h3 class="section__header">Participez au événements!</h3>
+        <h2 class="section__description">Slider title description</h2>
+        <h3 class="section__header">Slider title header</h3>
       </div>
 
       <div class="slider">
         <!-- Each slide image should be max: 950 by 500 px in size in order to respect style -->
-        <figure class="slide">
+        <div class="slide">
           <img
             class="lazy-img"
             src="assets/img/groupe1-lazy.jpg"
             data-src="assets/img/groupe1.jpg"
             alt="Photo entrainement #1"
           />
-          <figcaption>5km du Samedi 19 Octobre 2024.</figcaption>
-        </figure>
-        <figure class="slide">
+          <div class="caption">5km du Samedi 19 Octobre 2024.</div>
+        </div>
+        <div class="slide">
           <img
             class="lazy-img"
             src="assets/img/groupe2-lazy.jpg"
             data-src="assets/img/groupe2.jpg"
             alt="Photo entrainement #2"
           />
-          <figcaption>This is the caption for the image.</figcaption>
-        </figure>
-        <figure class="slide">
+          <div class="caption">This is the caption for the image.</div>
+        </div>
+        <div class="slide">
           <img
             class="lazy-img"
             src="assets/img/danny-lazy.jpg"
             data-src="assets/img/danny.jpg"
             alt="Photo coach Danny"
           />
-          <figcaption>Danny qui coach.</figcaption>
-        </figure>
+          <div class="caption">Danny qui coach.</div>
+        </div>
 
         <button class="slider__btn slider__btn--left"><div>&larr;</div></button>
         <button class="slider__btn slider__btn--right"><div>&rarr;</div></button>
@@ -97,22 +146,22 @@
     <footer class="footer">
       <ul class="footer__nav">
         <li class="footer__item">
-          <a class="footer__link" href="#">À propos</a>
+          <a class="footer__link" data-modal="footer__nav-modal-1">À propos</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" href="#">Forfaits</a>
+          <a class="footer__link" data-modal="footer__nav-modal-2">Forfaits</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" href="#">Conditions d'utilisation</a>
+          <a class="footer__link" data-modal="footer__nav-modal-3">Conditions d'utilisation</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" href="#">Confidentialité</a>
+          <a class="footer__link" data-modal="footer__nav-modal-4">Confidentialitée</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" href="#">Devenir coach</a>
+          <a class="footer__link" data-modal="footer__nav-modal-5">Devenir coach</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" href="#">Nous contacter</a>
+          <a class="footer__link" data-modal="footer__nav-modal-6">Nous contacter</a>
         </li>
       </ul>
       <div class="credits">
@@ -123,5 +172,79 @@
         </p>
       </div>
     </footer>
+
+    <div class="modal hidden" id="login">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Se connecter / Créer un compte
+        <br />
+        <div class="modal__sub-header">Créez un compte en moins de <span class="highlight-green">2 minutes!</span></div>
+      </h2>
+      <form class="modal__form">
+        <label>Email Address</label>
+        <input type="email" />
+        <label>Password</label>
+        <input type="password" />
+        <button class="btn modal__button">Se connecter &rarr;</button>
+      </form>
+    </div>
+
+    <!-- Modals Footer -->
+    <div class="modal hidden" id="footer__nav-modal-1">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">À propos</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-2">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Forfaits</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-3">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Conditions d'utilisation</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-4">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Confidentialité</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-5">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Devenir coach</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-6">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Nous contacter</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+    <!-- Modals Footer -->
+
+    <div class="overlay hidden"></div>
   </body>
 </html>
