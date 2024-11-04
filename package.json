@@ -1,0 +1,15 @@
+{
+  "name": "tripeux",
+  "version": "1.0.0",
+  "description": "Ce Club de Triathlon s'organise à Pointe-Aux-Trembles. Le Club accueille autant des débutant que des intermédiaires et Experts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
