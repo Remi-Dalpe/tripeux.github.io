@@ -4,20 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" type="image/png" href="assets/img/logo-tripeux.jpg" alt="Logo" />
+    <link rel="icon" type="image/png" href="/src/assets/img/logo-tripeux.jpg" alt="Logo" class="logo" />
+    <title>Les TRIpeux de l'est</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <title>Les TRIpeux de l'est</title>
+    <link rel="stylesheet" href="/src/styles/style.css" />
 
-    <script defer src="script.js"></script>
+    <script defer src="/src/scripts/main.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet" />
+    <script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
   </head>
   <body>
     <header class="header">
       <nav class="nav">
-        <img src="assets/img/logo-tripeux.jpg" alt="TRIpeux logo" class="nav__logo" id="logo" />
+        <img src="/src/assets/img/logo-tripeux.jpg" alt="TRIpeux logo" class="nav__logo" id="logo" />
 
         <ul class="nav__links">
           <li class="nav__item">
@@ -38,32 +46,37 @@
         </ul>
       </nav>
 
-      <div class="header__title">
-        <h1>
-          Club <span class="highlight-green">Multi-Sports</span>
-          <br />
-          <span class="highlight-blue">Les TRIpeux de l'est</span>
-        </h1>
-        <h4>Entrainements tout les mercredis et samedis!</h4>
-        <button class="btn--text btn--scroll-to" href="#section--1">Découverte&DownArrow;</button>
+      <div class="header__content">
+        <div class="header__title">
+          <h1>
+            Club <span class="highlight-green">Multi-Sports</span>
+            <br />
+            <span class="highlight-blue">Les TRIpeux de l'est</span>
+          </h1>
+          <h4 class="header__sub-header">Parc-nature de la Pointe-aux-Prairies</h4>
+          <button class="btn--discover" href="#section--1">Découverte&DownArrow;</button>
+          <h5>Multiple forfaits, entrainements tous les mercredi et samedi</h5>
+        </div>
+
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4631.424288616618!2d-73.50848692245638!3d45.6796179710784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDQwJzQ2LjYiTiA3M8KwMzAnMjEuMyJX!5e1!3m2!1sfr!2sca!4v1730764593276!5m2!1sfr!2sca"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d5631.424288616618!2d-73.50848692245638!3d45.6796179710784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDQwJzQ2LjYiTiA3M8KwMzAnMjEuMyJX!5e1!3m2!1sfr!2sca!4v1730764593276!5m2!1sfr!2sca"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          class="header__img"
+          class="header__map"
         ></iframe>
-        <!-- <img
-          loading="lazy"
-          src="assets/img/cover-lazy.jpg"
-          data-src="assets/img/cover.jpg"
-          class="header__img lazy-img"
-          alt="Minimalist bank items"
-        /> -->
       </div>
     </header>
 
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Calendar title description</h2>
+        <h3 class="section__header">Calendar title header</h3>
+      </div>
+      <div id="calendar"></div>
+    </section>
+
     <section class="section" id="section--2">
-      <div class="section__title section__title--entraineurs">
+      <div class="section__title">
         <h2 class="section__description">Entraineurs title description</h2>
         <h3 class="section__header">Entraineurs title header</h3>
       </div>
@@ -77,7 +90,7 @@
             pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
           </blockquote>
           <address class="entraineur__author">
-            <img src="assets/img/danny-photo.jpg" alt="Photo Profil Danny" class="entraineur__photo" />
+            <img src="/src/assets/img/danny-photo.jpg" alt="Photo Profil Danny" class="entraineur__photo" />
             <div>
               <h6 class="entraineur__name">Danny Rioux</h6>
               <div class="entraineur__separator"></div>
@@ -93,7 +106,7 @@
             pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
           </blockquote>
           <address class="entraineur__author">
-            <img src="assets/img/simon-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
+            <img src="/src/assets/img/simon-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
             <div>
               <h6 class="entraineur__name">Simon Dalpé</h6>
               <div class="entraineur__separator"></div>
@@ -109,7 +122,7 @@
             perferendis facere pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
           </blockquote>
           <address class="entraineur__author">
-            <img src="assets/img/genevieve-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
+            <img src="/src/assets/img/genevieve-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
             <div>
               <h6 class="entraineur__name">Genevieve Poitras</h6>
               <div class="entraineur__separator"></div>
@@ -131,8 +144,8 @@
         <div class="slide">
           <img
             class="lazy-img"
-            src="assets/img/groupe1-lazy.jpg"
-            data-src="assets/img/groupe1.jpg"
+            src="/src/assets/img/groupe1-lazy.jpg"
+            data-src="/src/assets/img/groupe1.jpg"
             alt="Photo entrainement #1"
           />
           <div class="caption">Course Samedi 19 Octobre 2024.</div>
@@ -141,8 +154,8 @@
         <div class="slide">
           <img
             class="lazy-img"
-            src="assets/img/groupe2-lazy.jpg"
-            data-src="assets/img/groupe2.jpg"
+            src="/src/assets/img/groupe2-lazy.jpg"
+            data-src="/src/assets/img/groupe2.jpg"
             alt="Photo entrainement #2"
           />
           <div class="caption">5km du</div>
@@ -151,8 +164,8 @@
         <div class="slide">
           <img
             class="lazy-img"
-            src="assets/img/groupe3-lazy.jpg"
-            data-src="assets/img/groupe3.jpg"
+            src="/src/assets/img/groupe3-lazy.jpg"
+            data-src="/src/assets/img/groupe3.jpg"
             alt="Photo entrainement #3"
           />
           <div class="caption">5km du Samedi 19 Octobre 2024.</div>
@@ -161,8 +174,8 @@
         <div class="slide">
           <img
             class="lazy-img"
-            src="assets/img/danny-lazy.jpg"
-            data-src="assets/img/danny.jpg"
+            src="/src/assets/img/danny-lazy.jpg"
+            data-src="/src/assets/img/danny.jpg"
             alt="Photo coach Danny"
           />
           <div class="caption">Danny qui coach.</div>
@@ -196,13 +209,13 @@
         </li>
       </ul>
       <div class="credits">
-        <img src="assets/img/logo-tripeux.jpg" alt="Logo" class="footer__logo" />
+        <img src="/src/assets/img/logo-tripeux.jpg" alt="Logo" class="footer__logo" />
         <p class="footer__copyright">
           &copy;
           <a class="footer__link twitter-link" target="_blank" href="">Les TRIpeux</a>.
         </p>
       </div>
-      <p class="version">v0.1.0-alpha3</p>
+      <p class="version">v0.1.0-alpha5</p>
     </footer>
 
     <div class="modal hidden" id="login">
