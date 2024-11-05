@@ -141,7 +141,6 @@ img {
     z-index: 1000;
     transition: all 0.5s;
     border-radius: 1rem;
-    transition: all 0.5s;
   }
 
   .overlay {
@@ -164,6 +163,7 @@ img {
 
   .modal__sub-header {
     font-size: 2rem;
+    padding-top: 1rem;
   }
 
   .modal__form {
@@ -177,6 +177,7 @@ img {
   .modal__form label {
     font-size: 1.5rem;
     font-weight: 500;
+    width: 15rem;
   }
 
   .modal__form input {
@@ -184,6 +185,18 @@ img {
     padding: 1rem 1.5rem;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
+  }
+
+  .btn__create-account {
+    border: none;
+    background: none;
+    font-weight: 600;
+    color: var(--color-primary-darker);
+    text-decoration: underline;
+  }
+
+  .btn__create-account:hover {
+    cursor: pointer;
   }
 
   .modal__button {
@@ -207,6 +220,41 @@ img {
     cursor: pointer;
     border: none;
     background: none;
+  }
+
+  .password__requirements {
+    grid-column: 1 / span 2;
+    padding-left: 3rem;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  .password__requirements p {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .password__requirements li {
+    width: 40rem;
+    font-size: 1.25rem;
+    padding-left: 1rem;
+    margin-left: 1.5rem;
+    list-style: inside disc;
+  }
+
+  .password__requirements-must {
+    color: red;
+  }
+
+  .password__requirements-should {
+    color: orangered;
+  }
+
+  .password__disclamer {
+    color: red;
+    background: #000;
+    border-radius: 1rem;
   }
   /* ===== GENERAL DESKTOP ===== */
 
@@ -253,7 +301,9 @@ img {
     grid-column: 2 / 3;
     grid-row: 1 / span 4;
     transform: translateY(-6rem);
+    border: none;
     border-radius: 1rem;
+    margin-left: 2rem;
   }
 
   /* NAVIGATION */
@@ -390,9 +440,8 @@ img {
   .entraineur__author {
     margin-left: 3rem;
     font-style: normal;
-
     display: grid;
-    grid-template-columns: 6.5rem 1fr;
+    grid-template-columns: 7rem 20rem;
     column-gap: 2rem;
   }
 
@@ -407,7 +456,12 @@ img {
     font-weight: 500;
     align-self: end;
     margin: 0;
-    text-decoration: underline;
+  }
+
+  .entraineur__separator {
+    border-bottom: 1px solid #000;
+    width: inherit;
+    height: 0;
   }
 
   .entraineur__title {
@@ -441,7 +495,7 @@ img {
   }
 
   .slide img {
-    /* Each slide image should be max: 950 by 500 px in size in order to respect style */
+    /* Each slide image should be: 950 by 500 px in size in order to respect style */
     width: 100%;
     height: auto;
     object-fit: cover;

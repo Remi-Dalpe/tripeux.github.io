@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="icon" type="image/png" href="assets/img/logo-tripeux.jpg" alt="Logo" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Les TRIpeux de l'est</title>
 
@@ -15,6 +18,7 @@
     <header class="header">
       <nav class="nav">
         <img src="assets/img/logo-tripeux.jpg" alt="TRIpeux logo" class="nav__logo" id="logo" />
+
         <ul class="nav__links">
           <li class="nav__item">
             <a class="nav__link" href="https://www.facebook.com/triathlonpat" target="_blank">Notre Facebook ↗</a>
@@ -40,15 +44,21 @@
           <br />
           <span class="highlight-blue">Les TRIpeux de l'est</span>
         </h1>
-        <h4>Entrainements tout les mercredis! 🏃🏊🚵</h4>
+        <h4>Entrainements tout les mercredis et samedis!</h4>
         <button class="btn--text btn--scroll-to" href="#section--1">Découverte&DownArrow;</button>
-        <img
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4631.424288616618!2d-73.50848692245638!3d45.6796179710784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDQwJzQ2LjYiTiA3M8KwMzAnMjEuMyJX!5e1!3m2!1sfr!2sca!4v1730764593276!5m2!1sfr!2sca"
           loading="lazy"
-          src="assets/img/cover-facebook-lazy.jpg"
-          data-src="assets/img/cover-facebook.jpg"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="header__img"
+        ></iframe>
+        <!-- <img
+          loading="lazy"
+          src="assets/img/cover-lazy.jpg"
+          data-src="assets/img/cover.jpg"
           class="header__img lazy-img"
           alt="Minimalist bank items"
-        />
+        /> -->
       </div>
     </header>
 
@@ -68,8 +78,11 @@
           </blockquote>
           <address class="entraineur__author">
             <img src="assets/img/danny-photo.jpg" alt="Photo Profil Danny" class="entraineur__photo" />
-            <h6 class="entraineur__name">Danny Rioux</h6>
-            <p class="entraineur__title">Fondateur</p>
+            <div>
+              <h6 class="entraineur__name">Danny Rioux</h6>
+              <div class="entraineur__separator"></div>
+              <p class="entraineur__title">Fondateur</p>
+            </div>
           </address>
         </div>
         <div class="entraineur">
@@ -81,8 +94,11 @@
           </blockquote>
           <address class="entraineur__author">
             <img src="assets/img/simon-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
-            <h6 class="entraineur__name">Simon Dalpé</h6>
-            <p class="entraineur__title">Président</p>
+            <div>
+              <h6 class="entraineur__name">Simon Dalpé</h6>
+              <div class="entraineur__separator"></div>
+              <p class="entraineur__title">Entraineur</p>
+            </div>
           </address>
         </div>
         <div class="entraineur">
@@ -94,8 +110,11 @@
           </blockquote>
           <address class="entraineur__author">
             <img src="assets/img/genevieve-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
-            <h6 class="entraineur__name">Genevieve Poitras</h6>
-            <p class="entraineur__title">Entraineur</p>
+            <div>
+              <h6 class="entraineur__name">Genevieve Poitras</h6>
+              <div class="entraineur__separator"></div>
+              <p class="entraineur__title">Entraineur</p>
+            </div>
           </address>
         </div>
       </div>
@@ -116,8 +135,9 @@
             data-src="assets/img/groupe1.jpg"
             alt="Photo entrainement #1"
           />
-          <div class="caption">5km du Samedi 19 Octobre 2024.</div>
+          <div class="caption">Course Samedi 19 Octobre 2024.</div>
         </div>
+
         <div class="slide">
           <img
             class="lazy-img"
@@ -125,8 +145,19 @@
             data-src="assets/img/groupe2.jpg"
             alt="Photo entrainement #2"
           />
-          <div class="caption">This is the caption for the image.</div>
+          <div class="caption">5km du</div>
         </div>
+
+        <div class="slide">
+          <img
+            class="lazy-img"
+            src="assets/img/groupe3-lazy.jpg"
+            data-src="assets/img/groupe3.jpg"
+            alt="Photo entrainement #3"
+          />
+          <div class="caption">5km du Samedi 19 Octobre 2024.</div>
+        </div>
+
         <div class="slide">
           <img
             class="lazy-img"
@@ -177,15 +208,47 @@
     <div class="modal hidden" id="login">
       <button class="btn--close-modal">&times;</button>
       <h2 class="modal__header">
-        Se connecter / Créer un compte
+        Se connecter
+        <br />
+        <div class="modal__sub-header">
+          Ou créez un compte en moins de <span class="highlight-green">2 minutes!</span>
+        </div>
+      </h2>
+      <form class="modal__form">
+        <label>Addresse email</label>
+        <input type="email" />
+        <label>Mot de passe</label>
+        <input type="password" />
+        <button class="btn__create-account" data-modal="sign-in">Créer un compte &rarr;</button>
+        <button class="btn modal__button">Se connecter &rarr;</button>
+      </form>
+    </div>
+
+    <div class="modal hidden" id="sign-in">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Créer un compte
         <br />
         <div class="modal__sub-header">Créez un compte en moins de <span class="highlight-green">2 minutes!</span></div>
       </h2>
       <form class="modal__form">
-        <label>Email Address</label>
+        <label>Nom d'utilisateur</label>
+        <input type="text" />
+        <label>Addresse email</label>
         <input type="email" />
-        <label>Password</label>
+        <label>Mot de passe</label>
         <input type="password" />
+        <label></label>
+        <input type="password" />
+        <ul class="password__requirements">
+          <p>Mot de passe doit etre:</p>
+          <li class="password__requirements-must">12 caractères de long au minimum (plus est mieux)</li>
+          <li class="password__requirements-must">Contiens au minimum une majuscule</li>
+          <li class="password__requirements-must">Contiens au minimum un symbole (!, ", #, etc...)</li>
+          <li class="password__requirements-should">Devrais être différent de vos mots de passe précédents.</li>
+          <li class="password__requirements-should">Devrais être mémorable mais dure à deviner</li>
+          <li class="password__disclamer">Ne partagez JAMAIS votre mot de passe ⚠️</li>
+        </ul>
         <button class="btn modal__button">Se connecter &rarr;</button>
       </form>
     </div>
