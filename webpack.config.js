@@ -1,4 +1,7 @@
+'use strict';
+
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/scripts/index.js',
@@ -24,5 +27,13 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: 'src/pages/index.html', to: path.resolve(__dirname, 'docs/index.html')},
+        {from: 'src/assets/img/', to: path.resolve(__dirname, 'docs/assets/img/')},
+      ],
+    }),
+  ],
   mode: 'development', // or 'development'
 };

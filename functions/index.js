@@ -1,19 +1,16 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+'use strict';
 
-const {onRequest} = require('firebase-functions/v2/https');
-const logger = require('firebase-functions/logger');
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+admin.initializeApp();
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
+// Example Cloud Function
+exports.addUser = functions.auth.user().onCreate(user => {
+  const uid = user.uid;
+  const email = user.email;
 
-exports.helloWorld = onRequest((request, response) => {
-  logger.info('Hello logs!', {structuredData: true});
-  response.send('Hello from Firebase!');
+  return admin.firestore().collection('users').doc(uid).set({
+    email: email,
+    createdAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
 });

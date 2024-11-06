@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/png" href="/src/assets/img/logo-tripeux.jpg" alt="Logo" class="logo" />
+    <title>Les TRIpeux de l'est</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet" />
+    <script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+
+    <script defer src="/src/scripts/user.js"></script>
+    <script defer src="/src/scripts/perf.js"></script>
+    <script defer src="/src/scripts/cal.js"></script>
+    <script defer src="/dist/bundle.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <img src="/src/assets/img/logo-tripeux.jpg" alt="TRIpeux logo" class="nav__logo" id="logo" />
+
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="https://www.facebook.com/triathlonpat" target="_blank">Notre Facebook ↗</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Calendrier</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Entraineurs</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Nous</a>
+          </li>
+          <li class="nav__item hidden" id="nav-profile">
+            <a class="nav__link" href="/src/pages/user.html">Profile</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn" href="#" data-modal="login">Se connecter / Créer un compte</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__content">
+        <div class="header__title">
+          <h1>
+            Club <span class="highlight-green">Multi-Sports</span>
+            <br />
+            <span class="highlight-blue">Les TRIpeux de l'est</span>
+          </h1>
+          <h4 class="header__sub-header">Parc-nature de la Pointe-aux-Prairies</h4>
+          <button class="btn--discover" href="#section--1">Découverte&DownArrow;</button>
+          <h5>Multiple forfaits, entrainements tous les mercredi et samedi</h5>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d5631.424288616618!2d-73.50848692245638!3d45.6796179710784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDQwJzQ2LjYiTiA3M8KwMzAnMjEuMyJX!5e1!3m2!1sfr!2sca!4v1730764593276!5m2!1sfr!2sca"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="header__map"
+        ></iframe>
+      </div>
+    </header>
+
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Calendar title description</h2>
+        <h3 class="section__header">Calendar title header</h3>
+      </div>
+      <div id="calendar"></div>
+    </section>
+
+    <section class="section" id="section--2">
+      <div class="section__title">
+        <h2 class="section__description">Entraineurs title description</h2>
+        <h3 class="section__header">Entraineurs title header</h3>
+      </div>
+
+      <div class="entraineurs">
+        <div class="entraineur">
+          <blockquote class="entraineur__text">
+            <span class="first-word">Danny</span> lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium
+            quas quisquam non? Quas voluptate nulla minima deleniti optio ullam nesciunt, numquam corporis et asperiores
+            laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus id alias reiciendis, perferendis facere
+            pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
+          </blockquote>
+          <address class="entraineur__author">
+            <img src="/src/assets/img/danny-photo.jpg" alt="Photo Profil Danny" class="entraineur__photo" />
+            <div>
+              <h6 class="entraineur__name">Danny Rioux</h6>
+              <div class="entraineur__separator"></div>
+              <p class="entraineur__title">Fondateur</p>
+            </div>
+          </address>
+        </div>
+        <div class="entraineur">
+          <blockquote class="entraineur__text">
+            <span class="first-word">Simon</span> lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium
+            quas quisquam non? Quas voluptate nulla minima deleniti optio ullam nesciunt, numquam corporis et asperiores
+            laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus id alias reiciendis, perferendis facere
+            pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
+          </blockquote>
+          <address class="entraineur__author">
+            <img src="/src/assets/img/simon-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
+            <div>
+              <h6 class="entraineur__name">Simon Dalpé</h6>
+              <div class="entraineur__separator"></div>
+              <p class="entraineur__title">Entraineur</p>
+            </div>
+          </address>
+        </div>
+        <div class="entraineur">
+          <blockquote class="entraineur__text">
+            <span class="first-word">Genevieve</span> lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusantium quas quisquam non? Quas voluptate nulla minima deleniti optio ullam nesciunt, numquam corporis
+            et asperiores laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus id alias reiciendis,
+            perferendis facere pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
+          </blockquote>
+          <address class="entraineur__author">
+            <img src="/src/assets/img/genevieve-photo.jpg" alt="Photo Profil Genevieve" class="entraineur__photo" />
+            <div>
+              <h6 class="entraineur__name">Genevieve Poitras</h6>
+              <div class="entraineur__separator"></div>
+              <p class="entraineur__title">Entraineur</p>
+            </div>
+          </address>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--3">
+      <div class="section__title">
+        <h2 class="section__description">Slider title description</h2>
+        <h3 class="section__header">Slider title header</h3>
+      </div>
+
+      <div class="slider">
+        <!-- Each slide image should be max: 950 by 500 px in size in order to respect style -->
+        <div class="slide">
+          <img
+            class="lazy-img"
+            src="/src/assets/img/groupe1-lazy.jpg"
+            data-src="/src/assets/img/groupe1.jpg"
+            alt="Photo entrainement #1"
+          />
+          <div class="caption">Course Samedi 19 Octobre 2024.</div>
+        </div>
+
+        <div class="slide">
+          <img
+            class="lazy-img"
+            src="/src/assets/img/groupe2-lazy.jpg"
+            data-src="/src/assets/img/groupe2.jpg"
+            alt="Photo entrainement #2"
+          />
+          <div class="caption">5km du</div>
+        </div>
+
+        <div class="slide">
+          <img
+            class="lazy-img"
+            src="/src/assets/img/groupe3-lazy.jpg"
+            data-src="/src/assets/img/groupe3.jpg"
+            alt="Photo entrainement #3"
+          />
+          <div class="caption">5km du Samedi 19 Octobre 2024.</div>
+        </div>
+
+        <div class="slide">
+          <img
+            class="lazy-img"
+            src="/src/assets/img/danny-lazy.jpg"
+            data-src="/src/assets/img/danny.jpg"
+            alt="Photo coach Danny"
+          />
+          <div class="caption">Danny qui coach.</div>
+        </div>
+
+        <button class="slider__btn slider__btn--left"><div>&larr;</div></button>
+        <button class="slider__btn slider__btn--right"><div>&rarr;</div></button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" data-modal="footer__nav-modal-1">À propos</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" data-modal="footer__nav-modal-2">Forfaits</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" data-modal="footer__nav-modal-3">Conditions d'utilisation</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" data-modal="footer__nav-modal-4">Confidentialitée</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" data-modal="footer__nav-modal-5">Devenir coach</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" data-modal="footer__nav-modal-6">Nous contacter</a>
+        </li>
+      </ul>
+      <div class="credits">
+        <img src="/src/assets/img/logo-tripeux.jpg" alt="Logo" class="footer__logo" />
+        <p class="footer__copyright">
+          &copy;
+          <a class="footer__link twitter-link" target="_blank" href="">Les TRIpeux</a>.
+        </p>
+      </div>
+      <p class="version">v0.1.0-alpha6</p>
+    </footer>
+
+    <div class="modal hidden" id="login">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Se connecter
+        <br />
+        <div class="modal__sub-header">
+          Ou créez un compte en moins de <span class="highlight-green">2 minutes!</span>
+        </div>
+      </h2>
+      <form class="modal__form">
+        <input type="email" id="email-login" name="email" placeholder="Email" />
+        <input type="password" id="password-login" name="password" placeholder="Mot de passe" />
+        <button class="btn__create-account" data-modal="signup">Créer un compte &rarr;</button>
+        <button class="btn modal__button unsub" type="submit">Se connecter &rarr;</button>
+      </form>
+    </div>
+
+    <div class="modal hidden" id="signup">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Créer un compte
+        <br />
+        <div class="modal__sub-header">Créez un compte en moins de <span class="highlight-green">2 minutes!</span></div>
+      </h2>
+      <form class="modal__form">
+        <input type="text" name="text" id="username" placeholder="Nom d'utilisateur" />
+        <input type="email" id="email-signup" name="email" placeholder="Email" />
+        <input type="password" id="password-signup" name="password" placeholder="Mot de passe" />
+        <input type="password" id="password-confirmation-signup" name="password" placeholder="Confirmez MDP" />
+        <ul class="password__requirements">
+          <p>Mot de passe doit etre:</p>
+          <li class="password__requirements-must">8 caractères de long au minimum (plus est mieux)</li>
+          <li class="password__requirements-must">Contiens au minimum une majuscule</li>
+          <li class="password__requirements-must">Contiens au minimum un chiffre</li>
+          <li class="password__requirements-must">Contiens au minimum un symbole (!, ", #, etc...)</li>
+          <li class="password__requirements-should">Devrais être différent de vos mots de passe précédents.</li>
+          <li class="password__requirements-should">Devrais être mémorable mais dure à deviner</li>
+          <li class="password__disclamer">Ne partagez JAMAIS votre mot de passe ⚠️</li>
+        </ul>
+        <button type="submit" class="btn modal__button unsub">Créer un compte &rarr;</button>
+      </form>
+    </div>
+
+    <div class="modal hidden unsub" id="logout">
+      <button class="btn__logout btn-logout" href="/dist/index.html">Se déconnecter &times;</button>
+      <button class="btn__logout">Revenir en arrière &rarr;;</button>
+    </div>
+
+    <!-- Modals Footer -->
+    <div class="modal hidden" id="footer__nav-modal-1">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">À propos</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-2">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Forfaits</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-3">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Conditions d'utilisation</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-4">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Confidentialité</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-5">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Devenir coach</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-6">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Nous contacter</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+    <!-- Modals Footer -->
+
+    <div class="overlay hidden"></div>
+  </body>
+</html>
