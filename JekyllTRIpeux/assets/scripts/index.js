@@ -5,7 +5,6 @@
 
 // Import the functions you need from the SDKs you need
 // Import the functions you need from the SDKs you need
-import '../styles/style.css';
 import {initializeApp} from 'firebase/app';
 import {getAnalytics} from 'firebase/analytics';
 // import {getFirestore, doc, setDoc} from 'firebase/firestore';
