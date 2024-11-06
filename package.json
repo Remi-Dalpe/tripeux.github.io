@@ -3,9 +3,9 @@
     "public": "/JekyllTRIpeux"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch",
-    "deploy": "npm run build && firebase deploy --only hosting"
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "bundler": "^0.8.0",
