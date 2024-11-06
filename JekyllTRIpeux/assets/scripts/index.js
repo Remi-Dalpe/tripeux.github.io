@@ -15,6 +15,8 @@ import {
   signOut,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  setPersistence,
+  browserSessionPersistence,
 } from 'firebase/auth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -41,10 +43,17 @@ const auth = getAuth();
 
 document.addEventListener('DOMContentLoaded', () => {
   ///////////////////////////////////////
-  // Login effect
-  const login = function () {
-    window.location.href = '/JekyllDemo/src/pages/user.html';
-  };
+  // Persistence
+  setPersistence(auth, browserSessionPersistence)
+    .then(() => {
+      const email = document.querySelector('#email-login').value;
+      const password = document.querySelector('#password-login').value;
+
+      return signInWithEmailAndPassword(auth, email, password);
+    })
+    .catch(error => {
+      console.error('Persistence error:', error.message);
+    });
 
   ///////////////////////////////////////
   // subscribing to auth changes
@@ -70,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } else {
       console.log('User is signed out');
-      if (window.location.pathname !== '/JekyllDemo/index.html') {
-        window.location.href = '/JekyllDemo/index.html'; // Redirect to login page
+      if (window.location.pathname !== '/JekyllTRIpeux/index.html') {
+        window.location.href = '/JekyllTRIpeux/index.html'; // Redirect to login page
       }
     }
   });
@@ -85,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   ///////////////////////////////////////
-  // signing users up
+  // signing up
   const signupForm = document.querySelector('#signup');
   if (signupForm) {
     signupForm.addEventListener('submit', e => {
@@ -104,31 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         })
         .then(() => {
-          login();
+          window.location.href = '/JekyllTRIpeux/src/pages/user.html';
         })
         .then(() => {
           console.log('user created');
-        })
-        .catch(err => {
-          console.log(err.message);
-        });
-    });
-  }
-
-  ///////////////////////////////////////
-  // logging in
-  const loginForm = document.querySelector('#login');
-  if (loginForm) {
-    loginForm.addEventListener('submit', e => {
-      e.preventDefault();
-
-      const email = document.querySelector('#email-login').value;
-      const password = document.querySelector('#password-login').value;
-
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          console.log('user logged in');
-          login();
         })
         .catch(err => {
           console.log(err.message);
@@ -144,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       signOut(auth)
         .then(() => {
           console.log('user logged out');
-          window.location.href = '/JekyllDemo/index.html';
+          window.location.href = '/JekyllTRIpeux/index.html';
         })
         .catch(err => {
           console.log(err.message);

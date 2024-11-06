@@ -1,11 +1,20 @@
 {
+  "hosting": {
+    "public": "/JekyllTRIpeux"
+  },
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "deploy": "npm run build && firebase deploy --only hosting"
+  },
   "dependencies": {
     "bundler": "^0.8.0",
-    "ejs": "^3.1.10",
     "express": "^4.21.1",
     "firebase": "^11.0.1",
     "jekyll": "^3.0.0-beta1",
     "node": "^22.11.0",
-    "ruby": "^0.6.1"
+    "ruby": "^0.6.1",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
   }
 }

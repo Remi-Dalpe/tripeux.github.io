@@ -4,28 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" type="image/png" href="/JekyllDemo/src/assets/img/logo-tripeux.jpg" alt="Logo" class="logo" />
+    <link rel="icon" type="image/png" href="/JekyllTRIpeux/assets/img/logo-tripeux.jpg" alt="Logo" class="logo" />
     <title>Les TRIpeux de l'est</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/JekyllDemo/src/styles/style.css" />
+    <link rel="stylesheet" href="/JekyllTRIpeux/src/styles/style.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet" />
     <script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
 
-    <script defer src="/JekyllDemo/assets/scripts/modals.js"></script>
-    <script defer src="/JekyllDemo/assets/scripts/slider.js"></script>
-    <script defer src="/JekyllDemo/assets/scripts/index.js"></script>
-    <script defer src="/JekyllDemo/assets/scripts/perf.js"></script>
-    <script defer src="/JekyllDemo/assets/scripts/cal.js"></script>
+    <script defer src="/JekyllTRIpeux/dist/bundle.js"></script>
+    <script defer src="/JekyllTRIpeux/assets/scripts/user.js"></script>
+    <script defer src="/JekyllTRIpeux/assets/scripts/modals.js"></script>
+    <script defer src="/JekyllTRIpeux/assets/scripts/perf.js"></script>
+    <script defer src="/JekyllTRIpeux/assets/scripts/cal.js"></script>
   </head>
   <body>
     <header class="header header__user">
       <nav class="nav">
-        <img src="/JekyllDemo/assets/img/logo-tripeux.jpg" alt="TRIpeux logo" class="nav__logo" id="logo" />
+        <img src="/JekyllTRIpeux/assets/img/logo-tripeux.jpg" alt="TRIpeux logo" class="nav__logo" id="logo" />
 
         <ul class="nav__links">
           <li class="nav__item">
@@ -41,7 +41,7 @@
             <a class="nav__link" href="#section--3">Nous</a>
           </li>
           <li class="nav__item hidden" id="nav-profile">
-            <a class="nav__link" href="/JekyllDemo/src/pages/user.html">Profile</a>
+            <a class="nav__link" href="/JekyllTRIpeux/src/pages/user.html">Profile</a>
           </li>
           <li class="nav__item">
             <a class="nav__link nav__link--btn" href="#" data-modal="login">Se connecter / Créer un compte</a>
@@ -106,7 +106,7 @@
           </li>
         </ul>
         <div class="credits">
-          <img src="/JekyllDemo/assets/img/logo-tripeux.jpg" alt="Logo" class="footer__logo" />
+          <img src="/JekyllTRIpeux/assets/img/logo-tripeux.jpg" alt="Logo" class="footer__logo" />
           <p class="footer__copyright">
             &copy;
             <a class="footer__link twitter-link" target="_blank" href="">Les TRIpeux</a>.
@@ -116,6 +116,84 @@
       </footer>
     </main>
 
-    {% include footer.html %} {% include modals.html %}
+    <div class="modal hidden" id="login">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Se connecter
+        <br />
+        <div class="modal__sub-header">
+          Ou créez un compte en moins de <span class="highlight-green">2 minutes!</span>
+        </div>
+      </h2>
+      <form class="modal__form">
+        <input type="email" id="email-login" name="email" placeholder="Email" />
+        <input type="password" id="password-login" name="password" placeholder="Mot de passe" />
+        <button class="btn__create-account" data-modal="signup">Créer un compte &rarr;</button>
+        <button class="btn modal__button unsub" type="submit">Se connecter &rarr;</button>
+      </form>
+    </div>
+
+    <div class="modal hidden unsub" id="logout">
+      <button class="btn__logout btn-logout" href="/dist/index.html">Se déconnecter &times;</button>
+      <button class="btn__logout">Revenir en arrière &rarr;;</button>
+    </div>
+
+    <!-- Modals Footer -->
+    <div class="modal hidden" id="footer__nav-modal-1">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">À propos</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-2">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Forfaits</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-3">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Conditions d'utilisation</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-4">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Confidentialité</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-5">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Devenir coach</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+
+    <div class="modal hidden" id="footer__nav-modal-6">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header-footer">Nous contacter</h2>
+      <p class="modal__footer-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+        quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+      </p>
+    </div>
+    <!-- Modals Footer -->
+
+    <div class="overlay hidden"></div>
   </body>
 </html>
