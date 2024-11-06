@@ -1,0 +1,103 @@
+<div class="modal hidden" id="login">
+  <button class="btn--close-modal">&times;</button>
+  <h2 class="modal__header">
+    Se connecter
+    <br />
+    <div class="modal__sub-header">Ou créez un compte en moins de <span class="highlight-green">2 minutes!</span></div>
+  </h2>
+  <form class="modal__form">
+    <input type="email" id="email-login" name="email" placeholder="Email" />
+    <input type="password" id="password-login" name="password" placeholder="Mot de passe" />
+    <button class="btn__create-account" data-modal="signup">Créer un compte &rarr;</button>
+    <button class="btn modal__button unsub" type="submit">Se connecter &rarr;</button>
+  </form>
+</div>
+
+<div class="modal hidden" id="signup">
+  <button class="btn--close-modal">&times;</button>
+  <h2 class="modal__header">
+    Créer un compte
+    <br />
+    <div class="modal__sub-header">Créez un compte en moins de <span class="highlight-green">2 minutes!</span></div>
+  </h2>
+  <form class="modal__form">
+    <input type="text" name="text" id="username" placeholder="Nom d'utilisateur" />
+    <input type="email" id="email-signup" name="email" placeholder="Email" />
+    <input type="password" id="password-signup" name="password" placeholder="Mot de passe" />
+    <input type="password" id="password-confirmation-signup" name="password" placeholder="Confirmez MDP" />
+    <ul class="password__requirements">
+      <p>Mot de passe doit etre:</p>
+      <li class="password__requirements-must">8 caractères de long au minimum (plus est mieux)</li>
+      <li class="password__requirements-must">Contiens au minimum une majuscule</li>
+      <li class="password__requirements-must">Contiens au minimum un chiffre</li>
+      <li class="password__requirements-must">Contiens au minimum un symbole (!, ", #, etc...)</li>
+      <li class="password__requirements-should">Devrais être différent de vos mots de passe précédents.</li>
+      <li class="password__requirements-should">Devrais être mémorable mais dure à deviner</li>
+      <li class="password__disclamer">Ne partagez JAMAIS votre mot de passe ⚠️</li>
+    </ul>
+    <button type="submit" class="btn modal__button unsub">Créer un compte &rarr;</button>
+  </form>
+</div>
+
+<div class="modal hidden unsub" id="logout">
+  <button class="btn__logout btn-logout" href="/dist/index.html">Se déconnecter &times;</button>
+  <button class="btn__logout">Revenir en arrière &rarr;;</button>
+</div>
+
+<!-- Modals Footer -->
+<div class="modal hidden" id="footer__nav-modal-1">
+  <button class="btn--close-modal">&times;</button>
+  <h2 class="modal__header-footer">À propos</h2>
+  <p class="modal__footer-text">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+    quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+  </p>
+</div>
+
+<div class="modal hidden" id="footer__nav-modal-2">
+  <button class="btn--close-modal">&times;</button>
+  <h2 class="modal__header-footer">Forfaits</h2>
+  <p class="modal__footer-text">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+    quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+  </p>
+</div>
+
+<div class="modal hidden" id="footer__nav-modal-3">
+  <button class="btn--close-modal">&times;</button>
+  <h2 class="modal__header-footer">Conditions d'utilisation</h2>
+  <p class="modal__footer-text">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+    quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+  </p>
+</div>
+
+<div class="modal hidden" id="footer__nav-modal-4">
+  <button class="btn--close-modal">&times;</button>
+  <h2 class="modal__header-footer">Confidentialité</h2>
+  <p class="modal__footer-text">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+    quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+  </p>
+</div>
+
+<div class="modal hidden" id="footer__nav-modal-5">
+  <button class="btn--close-modal">&times;</button>
+  <h2 class="modal__header-footer">Devenir coach</h2>
+  <p class="modal__footer-text">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+    quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+  </p>
+</div>
+
+<div class="modal hidden" id="footer__nav-modal-6">
+  <button class="btn--close-modal">&times;</button>
+  <h2 class="modal__header-footer">Nous contacter</h2>
+  <p class="modal__footer-text">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam animi quaerat ut sequi praesentium beatae ullam
+    quae sed iure odio temporibus veniam aliquam reprehenderit obcaecati distinctio autem, ducimus debitis magni!
+  </p>
+</div>
+<!-- Modals Footer -->
+
+<div class="overlay hidden"></div>
