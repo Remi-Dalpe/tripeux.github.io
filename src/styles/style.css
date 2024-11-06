@@ -427,7 +427,11 @@ h4 {
     height: 90vh;
   }
 
-  /* TESTIMONIALS */
+  .selected-date {
+    background-color: lightblue;
+  }
+
+  /* ENTRAINEURS */
   .entraineur {
     width: 65%;
     position: relative;
@@ -703,11 +707,12 @@ h4 {
   }
 
   .modal__form {
-    margin: 0 3rem;
+    margin: 0;
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
-    gap: 2.5rem;
+    row-gap: 2rem;
+    column-gap: 1rem;
   }
 
   .modal__form label {
@@ -717,7 +722,7 @@ h4 {
 
   .modal__form input {
     font-size: 1.7rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
   }
