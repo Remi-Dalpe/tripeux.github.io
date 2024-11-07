@@ -1,4 +1,7 @@
 {
+  "prettier": {
+    "bracketSpacing": false
+  },
   "hosting": {
     "public": "/JekyllTRIpeux"
   },
@@ -8,6 +11,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "bundler": "^0.8.0",
     "express": "^4.21.1",
     "firebase": "^11.0.1",

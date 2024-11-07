@@ -7,7 +7,8 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from 'firebase/app';
 import {getAnalytics} from 'firebase/analytics';
-// import {getFirestore, doc, setDoc} from 'firebase/firestore';
+import {getFirestore, doc, setDoc} from 'firebase/firestore';
+import {getStorage, ref, uploadBytes, getDownloadURL, deleteObject, listAll} from 'firebase/storage';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -36,10 +37,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
-// init services
-// const db = getFirestore();
+const db = getFirestore();
 const auth = getAuth();
+const storage = getStorage(app);
 
 document.addEventListener('DOMContentLoaded', () => {
   ///////////////////////////////////////
@@ -139,4 +139,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
   }
+
+  ///////////////////////////////////////
+  // Storage
+  ///////////////////////////////////////
+  // Upload
+  const fileInput = document.getElementById('imageInput');
+  const uploadButton = document.getElementById('uploadButton');
+  uploadButton.addEventListener('click', () => {
+    const file = fileInput.files[0]; // Get the selected file
+    if (file) {
+      const storageRef = ref(storage, 'uploads/' + file.name); // Create a reference to the file location
+
+      // Upload the file
+      uploadBytes(storageRef, file)
+        .then(snapshot => {
+          console.log('File uploaded successfully!');
+          getDownloadURL(snapshot.ref).then(downloadURL => {
+            console.log('File available at: ' + downloadURL); // Get the file URL
+          });
+        })
+        .catch(error => {
+          console.error('Error uploading file:', error);
+        });
+    }
+  });
+
+  ///////////////////////////////////////
+  // Download & Delete
+  const fileRef = ref(storage, 'uploads/your-file-name'); // Reference to the file
+  getDownloadURL(fileRef)
+    .then(url => {
+      console.log('File available at:', url);
+      // You can now use this URL to display the file, like in an <img> tag
+      document.getElementById('myImage').src = url; // Example for image
+    })
+    .catch(error => {
+      console.error('Error downloading file:', error);
+    });
+
+  deleteObject(fileRef)
+    .then(() => {
+      console.log('File deleted successfully!');
+    })
+    .catch(error => {
+      console.error('Error deleting file:', error);
+    });
+
+  ///////////////////////////////////////
+  // List files
+  const folderRef = ref(storage, 'uploads/');
+  listAll(folderRef)
+    .then(res => {
+      res.items.forEach(itemRef => {
+        console.log(itemRef.fullPath); // Log each file's path
+      });
+    })
+    .catch(error => {
+      console.error('Error listing files:', error);
+    });
 });
